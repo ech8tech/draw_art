@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import styles from "../App.module.css";
-import { TOOLBAR_WIDTH } from "../tools/consts.ts";
+import { TOOLBAR_WIDTH } from "./canvas/consts";
 
 type ToolbarProps = {
   onSelectToolId: (toolId: string) => void;

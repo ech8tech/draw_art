@@ -1,5 +1,5 @@
 import React, {RefObject, useState} from "react";
-import { CELL_SIZE } from './consts'
+import { CELL_SIZE } from '../consts.ts'
 
 export function usePixel(ref: RefObject<HTMLCanvasElement>) {
   const ctx = ref.current?.getContext('2d');

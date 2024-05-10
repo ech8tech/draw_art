@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import styles from './CanvasMain.module.css'
-import {useTools} from "../../../tools";
+import {useTools} from "../hooks";
 
 type MainProps = {
   toolId?: string;

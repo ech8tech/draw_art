@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 import styles from './CanvasField.module.css'
-import {CELL_SIZE} from "../../../tools";
+import {CELL_SIZE} from "../consts";
 
 export function CanvasField() {
   const cvs = useRef<HTMLCanvasElement | null>(null);

@@ -8,4 +8,3 @@ export function useTools(ref: RefObject<HTMLCanvasElement>) {
 
   return { ...brush, ...pixel }
 }
-export * from './consts.ts'

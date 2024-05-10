@@ -1,5 +1,5 @@
 import React, {RefObject, useState} from "react";
-import { TOOLBAR_WIDTH_BOX } from "./consts.ts";
+import { TOOLBAR_WIDTH_BOX } from "../consts.ts";
 
 export function useBrush(ref: RefObject<HTMLCanvasElement>) {
   const ctx = ref.current?.getContext('2d');
