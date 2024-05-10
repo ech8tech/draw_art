@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  background-color: #161616;
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  display: flex;
+}
+
+.canvas {
+  border: 1px solid white;
+}
+
+.canvasField,
+.canvasPointer {
+  border: 1px solid white;
+  position: absolute;
+  left: 170px;
+  z-index: -1;
+}
+
+.toolbar {
+  border: 1px solid white;
+  margin-right: 8px;
+  color: white;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.toolsGroup {
+  display: flex;
+}
+
+.tool {
+  display: flex;
+  width: 50%;
+}
+
+.tool_btn {
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tool_btn.active {
+  background: red;
+}
