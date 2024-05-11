@@ -1,8 +1,10 @@
 import React, {RefObject, useState} from "react";
-import {CANVAS_OFFSET_LEFT, CANVAS_OFFSET_TOP, CELL_SIZE} from '../consts.ts'
+import {CELL_SIZE} from '../consts.ts'
+import {useApp} from "../../../app/useApp.tsx";
 
 export function usePixel(ref: RefObject<HTMLCanvasElement>) {
   const ctx = ref.current?.getContext('2d');
+  const { app } = useApp();
 
   const [isDrawing, setIsDrawing] = useState(false);
 
@@ -11,8 +13,7 @@ export function usePixel(ref: RefObject<HTMLCanvasElement>) {
   const handlePixelStart = (e: React.MouseEvent) => {
     setIsDrawing(true);
 
-    const x = Math.floor((e.clientX - CANVAS_OFFSET_LEFT) / CELL_SIZE) * 10;
-    const y = Math.floor((e.clientY - CANVAS_OFFSET_TOP) / CELL_SIZE) * 10;
+    const [x, y] = app.onSetCoords(e);
 
     ctx.fillStyle = 'red'
     ctx.fillRect(x, y, CELL_SIZE, CELL_SIZE);
@@ -20,8 +21,7 @@ export function usePixel(ref: RefObject<HTMLCanvasElement>) {
 
   const handlePixel = (e: React.MouseEvent) => {
     if (isDrawing) {
-      const x = Math.floor((e.clientX - CANVAS_OFFSET_LEFT) / CELL_SIZE) * 10;
-      const y = Math.floor((e.clientY - CANVAS_OFFSET_TOP) / CELL_SIZE) * 10;
+      const [x, y] = app.onSetCoords(e);
 
       ctx.fillStyle = 'red'
       ctx.fillRect(x, y, CELL_SIZE, CELL_SIZE);

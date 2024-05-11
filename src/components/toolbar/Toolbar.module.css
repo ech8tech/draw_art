@@ -3,3 +3,9 @@
   width: 100%;
   grid-area: toolbar;
 }
+
+.button {
+  cursor: pointer;
+  width: 80px;
+  height: 24px;
+}

@@ -12,6 +12,7 @@ export function Canvas({ toolId } : { toolId?: string }) {
   useEffect(() => {
     const params = refCanvas.current?.getBoundingClientRect();
     const { width, height } = params || {}
+    
     setWidth(width || 0);
     setHeight(height || 0);
   }, [refCanvas.current])
