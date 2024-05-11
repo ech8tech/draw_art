@@ -53,21 +53,17 @@ export function CanvasMain({ toolId, width, height }: CanvasMainProps) {
     }
   }
 
-  if (width && height) {
-    return (
-      <canvas
-        id="canvas_main"
-        ref={cvs}
-        className={styles.canvas}
-        width={width}
-        height={height}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      ></canvas>
-    )
-  }
-
-  return null;
+  return (
+    <canvas
+      id="canvas_main"
+      ref={cvs}
+      className={styles.canvas}
+      width={width}
+      height={height}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    ></canvas>
+  )
 }

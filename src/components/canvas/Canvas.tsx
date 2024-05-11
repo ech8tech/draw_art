@@ -18,10 +18,8 @@ export function Canvas({ toolId } : { toolId?: string }) {
 
   return (
     <div ref={refCanvas} className={styles.canvas}>
-      <>
-        <CanvasMain width={width} height={height} toolId={toolId} />
-        <CanvasField width={width} height={height} />
-      </>
+      <CanvasMain width={width} height={height} toolId={toolId} />
+      <CanvasField width={width} height={height} />
     </div>
   )
 }

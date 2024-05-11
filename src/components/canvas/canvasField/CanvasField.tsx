@@ -37,19 +37,15 @@ export function CanvasField({ width, height }: CanvasFieldProps) {
     if (cvs.current) {
       drawCells();
     }
-  }, [cvs.current]);
+  }, [cvs.current, width, height]);
 
-  if (width && height) {
-    return (
-      <canvas
-        id="canvas_field"
-        ref={cvs}
-        className={styles.canvas}
-        width={width}
-        height={height}
-      ></canvas>
-    )
-  }
-
-  return null;
+  return (
+    <canvas
+      id="canvas_field"
+      ref={cvs}
+      className={styles.canvas}
+      width={width}
+      height={height}
+    ></canvas>
+  )
 }
