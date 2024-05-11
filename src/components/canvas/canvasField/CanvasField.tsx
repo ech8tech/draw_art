@@ -2,7 +2,12 @@ import {useEffect, useRef} from "react";
 import styles from './CanvasField.module.css'
 import {CELL_SIZE} from "../consts";
 
-export function CanvasField() {
+type CanvasFieldProps = {
+  width?: number;
+  height?: number;
+}
+
+export function CanvasField({ width, height }: CanvasFieldProps) {
   const cvs = useRef<HTMLCanvasElement | null>(null);
 
   const drawCells = () => {
@@ -32,15 +37,19 @@ export function CanvasField() {
     if (cvs.current) {
       drawCells();
     }
-  }, []);
+  }, [cvs.current]);
 
-  return (
-    <canvas
-      id="canvas_field"
-      ref={cvs}
-      className={styles.canvas}
-      width="700"
-      height="500"
-    ></canvas>
-  )
+  if (width && height) {
+    return (
+      <canvas
+        id="canvas_field"
+        ref={cvs}
+        className={styles.canvas}
+        width={width}
+        height={height}
+      ></canvas>
+    )
+  }
+
+  return null;
 }

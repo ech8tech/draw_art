@@ -1,7 +1,6 @@
 import {useState} from "react";
 import styles from './App.module.css'
-import {Toolbar} from "./components/Toolbar.tsx";
-import {CanvasField, CanvasMain} from "./components/canvas";
+import {Canvas, Toolbar, Tools} from "./components";
 
 function App() {
   const [toolId, setToolId] = useState<string>();
@@ -16,9 +15,9 @@ function App() {
 
   return (
     <div className={styles.main}>
-      <Toolbar onSelectToolId={handleSelectTool} toolId={toolId}/>
-      <CanvasMain toolId={toolId} />
-      <CanvasField />
+      <Toolbar />
+      <Tools onSelectToolId={handleSelectTool} toolId={toolId}/>
+      <Canvas toolId={toolId} />
     </div>
   )
 }

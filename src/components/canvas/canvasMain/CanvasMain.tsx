@@ -2,11 +2,13 @@ import React, {useRef} from "react";
 import styles from './CanvasMain.module.css'
 import {useTools} from "../hooks";
 
-type MainProps = {
+type CanvasMainProps = {
   toolId?: string;
+  width?: number;
+  height?: number;
 }
 
-export function CanvasMain({ toolId }: MainProps) {
+export function CanvasMain({ toolId, width, height }: CanvasMainProps) {
   const cvs = useRef<HTMLCanvasElement | null>(null);
 
   const {
@@ -51,17 +53,21 @@ export function CanvasMain({ toolId }: MainProps) {
     }
   }
 
-  return (
-    <canvas
-      id="canvas_main"
-      ref={cvs}
-      className={styles.canvas}
-      width="700"
-      height="500"
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-    ></canvas>
-  )
+  if (width && height) {
+    return (
+      <canvas
+        id="canvas_main"
+        ref={cvs}
+        className={styles.canvas}
+        width={width}
+        height={height}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      ></canvas>
+    )
+  }
+
+  return null;
 }

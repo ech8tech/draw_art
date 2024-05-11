@@ -1,0 +1,31 @@
+.tools {
+  border: 1px solid white;
+  margin-right: 8px;
+  color: white;
+  grid-area: tools;
+}
+
+.toolList {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.toolsGroup {
+  display: flex;
+}
+
+.tool {
+  display: flex;
+  width: 50%;
+}
+
+.tool_btn {
+  padding: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tool_btn.active {
+  background: red;
+}

@@ -1,6 +1,4 @@
 .canvas {
   border: 1px solid white;
-  position: absolute;
-  left: 170px;
-  z-index: -1;
+  grid-area: canvas;
 }
